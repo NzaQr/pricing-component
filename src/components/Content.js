@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
-import Switch from "./Switch";
+import Toggle from "./Toggle";
 import Plan from "../Plan";
 import "./content.css";
 
@@ -21,9 +21,13 @@ function Content() {
 
   return (
     <div className="content">
-      <h1 className="">Our Pricing</h1>
-      <Switch option={option} handleToggle={handleToggle} />
-      {priceComponent}
+      <h1 className="title">Our Pricing</h1>
+      <div className="toggle-container">
+        <span className="toggle-type">Monthly</span>
+        <Toggle option={option} handleToggle={handleToggle} />
+        <span className="toggle-type">Annually</span>
+      </div>
+      <div className="price-position">{priceComponent}</div>
     </div>
   );
 }
