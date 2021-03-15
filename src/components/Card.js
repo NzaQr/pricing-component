@@ -6,48 +6,27 @@ export default function Card({
 }) {
   return (
     <div
-      className="card"
-      style={{
-        background:
-          type === "Professional"
-            ? "linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%))"
-            : "#fff",
-        transform: type === "Professional" ? "scale(1.15)" : "",
-      }}
+      className={`${type === "Professional" ? "card-professional" : "card"}`}
     >
       <p
-        className="sub-type"
-        style={{
-          color: type === "Professional" ? "#fff" : "hsl(233, 13%, 49%)",
-        }}
+        className={`${type === "Professional" ? "text-professional" : "text"}`}
       >
         {type}
       </p>
       <p
-        className="price"
-        style={{
-          color: type === "Professional" ? "#fff" : "hsl(232, 13%, 33%)",
-        }}
+        className={`${
+          type === "Professional" ? "price-professional" : "price"
+        }`}
       >
         {option === "monthly" ? priceMonthly : priceAnnually}
       </p>
-      <ul
-        style={{
-          color: type === "Professional" ? "#fff" : "hsl(233, 13%, 49%)",
-        }}
-      >
+      <ul className={`${type === "Professional" ? "info-professional" : ""}`}>
         <li>{storage}</li>
         <li>{users}</li>
         <li>{send}</li>
       </ul>
       <button
-        style={{
-          background:
-            type === "Professional"
-              ? "#fff"
-              : "linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%))",
-          color: type === "Professional" ? "hsl(237, 63%, 64%)" : "#fff",
-        }}
+        className={`${type === "Professional" ? "button-professional" : ""}`}
       >
         LEARN MORE
       </button>
